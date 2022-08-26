@@ -7,26 +7,16 @@ for i in range(4):
     if x1 > nx1:
         x1, y1, x2, y2, nx1, ny1, nx2, ny2 = nx1, ny1, nx2, ny2, x1, y1, x2, y2
 
+    '''
     sq1 = (x1, x2, y1, y2)
     sq2 = (nx1, nx2, ny1, ny2)
+    '''
 
-    if ny1 >= y1:
-        if x2 < nx1 and y2 < ny1:
-            print('d')
-        elif x2 == nx1 or y2 == ny1:
-            if x2 == nx1 and y2 == ny1:
-                print('c')
-            else:
-                print('b')
-        else:
-            print('a')
+    if (x2 == nx1 and y2 == ny1) or (x2 == nx1 and ny2 == y1):
+        print('c')
+    elif y2 < ny1 or x2 < nx1 or ny2 < y1:
+        print('d')
+    elif x2 == nx1 or y2 == ny1 or ny2 == y1:
+        print('b')
     else:
-        if x2 < nx1 and ny2 < y1:
-            print('d')
-        elif x2 == nx1 or ny2 == y1:
-            if x2 == nx1 and ny2 == y1:
-                print('c')
-            else:
-                print('b')
-        else:
-            print('a')
+        print('a')
